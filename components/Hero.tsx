@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
+import Link from 'next/link'
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 30 },
@@ -55,12 +56,12 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="px-8 py-4 rounded-full bg-[#3a5a40] text-white font-semibold text-base hover:bg-[#2d4731] transition-all duration-200 hover:scale-105 shadow-lg"
           >
             Get a Free Quote
-          </a>
+          </Link>
           <a
             href="#services"
             className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-base hover:bg-white hover:text-[#3a5a40] transition-all duration-200 hover:scale-105"

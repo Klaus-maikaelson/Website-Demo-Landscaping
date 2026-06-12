@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Leaf, Phone, Mail, MapPin, Clock, Users, Camera } from 'lucide-react'
 
 const serviceLinks = [
@@ -15,13 +16,12 @@ const serviceLinks = [
 ]
 
 const companyLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Get a Free Quote', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Gallery', href: '/#gallery' },
+  { label: 'Testimonials', href: '/#testimonials' },
 ]
 
 // Simple Google icon as SVG since lucide doesn't have it
@@ -44,14 +44,14 @@ export default function Footer() {
 
           {/* Column 1 — Brand */}
           <div className="flex flex-col gap-4">
-            <a href="#home" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-[#3a5a40] flex items-center justify-center flex-shrink-0">
                 <Leaf className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold text-base text-white leading-none">
                 Z&apos;s Exterior Services
               </span>
-            </a>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Manassas-based, family-run exterior services for Northern Virginia.
             </p>
@@ -81,12 +81,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {serviceLinks.map((link) => (
                 <li key={link}>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-400 text-sm hover:text-white hover:underline decoration-[#3a5a40] underline-offset-2 transition-colors duration-200"
                   >
                     {link}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,12 +100,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {companyLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-gray-400 text-sm hover:text-white hover:underline decoration-[#3a5a40] underline-offset-2 transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

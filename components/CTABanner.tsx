@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function CTABanner() {
   return (
@@ -31,12 +32,12 @@ export default function CTABanner() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
         >
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="inline-flex items-center px-8 py-4 rounded-full bg-white text-[#3a5a40] font-semibold text-base hover:bg-gray-50 hover:scale-105 transition-all duration-200 shadow-lg"
           >
             Get a Free Quote
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

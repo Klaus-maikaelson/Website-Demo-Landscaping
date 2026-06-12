@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter Fallback', system-ui, sans-serif;
+  --font-sans: var(--font-sofia), 'Plus Jakarta Sans Fallback', system-ui, sans-serif;
 
   /* Brand colors */
   --color-brand-green: #3a5a40;
