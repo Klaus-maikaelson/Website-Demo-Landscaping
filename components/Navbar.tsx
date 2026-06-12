@@ -3,36 +3,23 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Leaf } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const isActive = (href: string) => {
-    if (href === '/contact') {
-      return pathname === '/contact'
-    }
-    if (href === '/') {
-      return pathname === '/' && !pathname.includes('/contact')
-    }
-    return false
-  }
 
   return (
     <header
@@ -44,7 +31,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <a href="#home" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-full bg-[#3a5a40] flex items-center justify-center">
             <Leaf className="w-4 h-4 text-white" />
           </div>
@@ -55,35 +42,31 @@ export default function Navbar() {
           >
             Z&apos;s Exterior Services
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className={`text-sm font-medium transition-colors duration-200 hover:text-[#3a5a40] ${
-                isActive(link.href)
-                  ? 'text-[#3a5a40]'
-                  : scrolled
-                  ? 'text-[#1a1a1a]'
-                  : 'text-white/90'
+                scrolled ? 'text-[#1a1a1a]' : 'text-white/90'
               }`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <Link
-            href="/contact"
+          <a
+            href="#contact"
             className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors duration-200"
           >
             Get a Free Quote
-          </Link>
+          </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={`md:hidden p-2 rounded-md transition-colors duration-200 ${
@@ -108,26 +91,22 @@ export default function Navbar() {
           >
             <nav className="flex flex-col px-6 py-4 gap-1">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`py-3 text-base font-medium border-b border-gray-50 transition-colors duration-200 ${
-                    isActive(link.href)
-                      ? 'text-[#3a5a40]'
-                      : 'text-[#1a1a1a] hover:text-[#3a5a40]'
-                  }`}
+                  className="py-3 text-base font-medium text-[#1a1a1a] hover:text-[#3a5a40] border-b border-gray-50 transition-colors duration-200"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
-              <Link
-                href="/contact"
+              <a
+                href="#contact"
                 onClick={() => setMenuOpen(false)}
                 className="mt-3 inline-flex items-center justify-center px-5 py-3 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors duration-200"
               >
                 Get a Free Quote
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}

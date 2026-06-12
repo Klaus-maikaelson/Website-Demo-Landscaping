@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
 
 const services = [
   {
@@ -128,10 +127,10 @@ export default function Services() {
                     <p className="text-[14px] text-gray-300 leading-relaxed pt-3">
                       {service.description}
                     </p>
-                    <Link href="/contact" className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors">
+                    <button className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors">
                       Learn More
                       <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
