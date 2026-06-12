@@ -25,7 +25,7 @@ const pillars = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="bg-white py-16 md:py-24">
+    <section id="about" className="bg-[#0f0f0f] py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#1a1a1a] text-balance">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white text-balance">
             Why Z&apos;s Exteriors
           </h2>
         </motion.div>
@@ -52,13 +52,13 @@ export default function WhyChooseUs() {
               className="flex flex-col gap-3"
             >
               <span
-                className="font-bold leading-none text-[#588157]/20 select-none"
+                className="font-bold leading-none text-[#4ade80]/20 select-none"
                 style={{ fontSize: 'clamp(64px, 8vw, 96px)' }}
               >
                 {pillar.num}
               </span>
-              <h3 className="text-[20px] font-semibold text-[#1a1a1a] -mt-2">{pillar.title}</h3>
-              <p className="text-gray-500 leading-relaxed">{pillar.description}</p>
+              <h3 className="text-[20px] font-semibold text-white -mt-2">{pillar.title}</h3>
+              <p className="text-[#9ca3af] leading-relaxed">{pillar.description}</p>
             </motion.div>
           ))}
         </div>

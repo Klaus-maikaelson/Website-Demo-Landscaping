@@ -26,31 +26,49 @@ const items = [
   },
 ]
 
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+}
+
+const itemVariant = {
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 300, damping: 18 },
+  },
+}
+
 export default function TrustBar() {
   return (
-    <section className="bg-[#f5f5f5] py-16 md:py-24">
+    <section className="bg-[#1a1a1a] py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {items.map((item, i) => {
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {items.map((item) => {
             const Icon = item.icon
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-                className="flex flex-col items-center text-center gap-3"
+                variants={itemVariant}
+                className="flex flex-col gap-4 border-l-2 border-[#4ade80] bg-[#0f0f0f] rounded-r-xl pl-6 pr-5 py-8"
               >
-                <div className="w-14 h-14 rounded-full bg-[#3a5a40]/10 flex items-center justify-center">
-                  <Icon className="w-7 h-7 text-[#3a5a40]" />
+                <div className="w-14 h-14 rounded-full bg-[#4ade80]/10 flex items-center justify-center">
+                  <Icon className="w-7 h-7 text-[#4ade80]" />
                 </div>
-                <h3 className="text-base font-semibold text-[#1a1a1a]">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                <p className="text-sm text-[#9ca3af] leading-relaxed">{item.description}</p>
               </motion.div>
             )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
