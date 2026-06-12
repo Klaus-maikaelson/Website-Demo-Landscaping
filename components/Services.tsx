@@ -6,55 +6,55 @@ import { ArrowRight } from 'lucide-react'
 const services = [
   {
     name: 'Plant Installation',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80',
+    image: '/services/plant-installation.png',
     description:
       'Custom plant design and installation following best practices. Your landscaping will thrive for years to come.',
   },
   {
     name: 'Mulching',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
+    image: '/services/mulching.png',
     description:
       "Suppress weeds and define garden beds with fresh mulch. Significantly enhances your yard's appearance.",
   },
   {
     name: 'Yard Cleanup',
-    image: 'https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=800&q=80',
+    image: '/services/yard-cleanup.png',
     description:
       'Debris removal, trimming, and edge defining to sharpen your outdoor spaces.',
   },
   {
     name: 'Hardscaping',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    image: '/services/hardscaping.png',
     description:
       'Retaining walls, patios, and steps installed by experts. Complete your outdoor space.',
   },
   {
     name: 'Drainage',
-    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80',
+    image: '/services/drainage.png',
     description:
       'Grading and drain installation to prevent water pooling on your property.',
   },
   {
     name: 'Leaf Removal',
-    image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=800&q=80',
+    image: '/services/leaf-removal.png',
     description:
       'Professional fall cleanup to protect your grass and boost curb appeal.',
   },
   {
     name: 'Power Washing',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+    image: '/services/power-washing.png',
     description:
       'Soft washing and surface cleaning to remove algae, mildew, and grime.',
   },
   {
     name: 'Permanent LED Installs',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&w=800&q=80',
+    image: '/services/led-installs.png',
     description:
       'Permanent holiday lighting designed and installed for stress-free seasons year after year.',
   },
   {
     name: 'Snow Removal',
-    image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80',
+    image: '/services/snow-removal.png',
     description:
       'Driveways and walkways cleared to keep your property safe all winter.',
   },
