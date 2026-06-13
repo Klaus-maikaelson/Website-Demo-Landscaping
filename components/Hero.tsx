@@ -1,13 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
-
-const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut', delay },
-})
 
 export default function Hero() {
   return (
@@ -16,12 +9,9 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Ken Burns zooming background */}
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
+      <div
+        className="absolute inset-0 bg-cover bg-center animate-kenburns"
         style={{ backgroundImage: "url('/hero-bg.svg')" }}
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.1 }}
-        transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
       />
 
       {/* Dark overlay */}
@@ -30,31 +20,27 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center py-24">
         {/* Badge */}
-        <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3a5a40]/80 border border-[#588157]/60 text-white text-sm font-medium mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3a5a40]/80 border border-[#588157]/60 text-white text-sm font-medium mb-8 animate-fadein animate-delay-100">
           <Star className="w-4 h-4 text-[#d4a017] fill-[#d4a017]" />
           220+ Five-Star Reviews on Google
-        </motion.div>
+        </div>
 
         {/* Headline */}
-        <motion.h1
-          {...fadeUp(0.25)}
-          className="text-white font-bold text-balance leading-tight mb-6"
+        <h1
+          className="text-white font-bold text-balance leading-tight mb-6 animate-fadein animate-delay-200"
           style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}
         >
           Expert Landscaping Company<br className="hidden md:block" /> in Manassas, VA
-        </motion.h1>
+        </h1>
 
         {/* Subheadline */}
-        <motion.p
-          {...fadeUp(0.4)}
-          className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
-        >
+        <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 animate-fadein animate-delay-300">
           Transforming outdoor spaces with landscaping, power washing,
           hardscaping, and more&nbsp;&mdash; done right, every time.
-        </motion.p>
+        </p>
 
         {/* Buttons */}
-        <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadein animate-delay-400">
           <a
             href="#contact"
             className="px-8 py-4 rounded-full bg-[#3a5a40] text-white font-semibold text-base hover:bg-[#2d4731] transition-all duration-200 hover:scale-105 shadow-lg"
@@ -67,7 +53,7 @@ export default function Hero() {
           >
             See Our Services
           </a>
-        </motion.div>
+        </div>
       </div>
 
       {/* Bottom fade */}

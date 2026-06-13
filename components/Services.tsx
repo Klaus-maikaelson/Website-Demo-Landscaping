@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 const services = [
@@ -60,51 +57,27 @@ const services = [
   },
 ]
 
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1 },
-  },
-}
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
-
 export default function Services() {
   return (
     <section id="services" className="bg-[#0f0f0f] py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fadein">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3 text-balance">
             What We Offer
           </h2>
           <p className="text-[#9ca3af] text-lg">
             Professional exterior services for every season.
           </p>
-        </motion.div>
+        </div>
 
         {/* Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-40px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {services.map((service) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <div
               key={service.name}
-              variants={cardVariant}
-              className="group relative h-72 rounded-2xl overflow-hidden bg-[#1a1a1a] shadow-lg"
+              className="group relative h-72 rounded-2xl overflow-hidden bg-[#1a1a1a] shadow-lg animate-fadein"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               {/* Background photo */}
               <div
@@ -134,9 +107,9 @@ export default function Services() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 
 const reviews = [
@@ -21,16 +18,6 @@ const reviews = [
   },
 ]
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-}
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
-
 function Stars() {
   return (
     <div className="flex gap-1 mb-4">
@@ -46,32 +33,20 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-[#1a1a1a] py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fadein">
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3 text-balance">
             What Our Clients Say
           </h2>
           <p className="text-[#9ca3af] text-lg">Real reviews from real homeowners.</p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-40px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14"
-        >
-          {reviews.map((review) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          {reviews.map((review, index) => (
+            <div
               key={review.name}
-              variants={cardVariant}
-              className="relative overflow-hidden bg-[#2d2d2d] rounded-2xl p-7 border-t-2 border-[#4ade80] flex flex-col"
+              className="relative overflow-hidden bg-[#2d2d2d] rounded-2xl p-7 border-t-2 border-[#4ade80] flex flex-col animate-fadein"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               {/* Decorative quote mark */}
               <span className="pointer-events-none absolute -top-6 right-4 text-[120px] leading-none font-serif text-white/5 select-none">
@@ -88,18 +63,12 @@ export default function Testimonials() {
                   <p className="text-[#9ca3af] text-xs mt-0.5">{review.city}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Review count CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center"
-        >
+        <div className="text-center animate-fadein animate-delay-500">
           <p className="text-4xl font-bold text-white mb-1">220+ Five-Star Reviews</p>
           <p className="text-[#9ca3af] mb-6">Consistently rated 5 stars on Google</p>
           <a
@@ -110,7 +79,7 @@ export default function Testimonials() {
           >
             Read All Reviews on Google
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

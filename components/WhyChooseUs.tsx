@@ -1,7 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
 const pillars = [
   {
     num: '01',
@@ -28,28 +24,19 @@ export default function WhyChooseUs() {
     <section id="about" className="bg-[#0f0f0f] py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14 animate-fadein">
           <h2 className="text-3xl md:text-4xl font-semibold text-white text-balance">
             Why Z&apos;s Exteriors
           </h2>
-        </motion.div>
+        </div>
 
         {/* Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {pillars.map((pillar, i) => (
-            <motion.div
+          {pillars.map((pillar, index) => (
+            <div
               key={pillar.num}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: i * 0.12, ease: 'easeOut' }}
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-3 animate-fadein"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               <span
                 className="font-bold leading-none text-[#4ade80]/20 select-none"
@@ -59,7 +46,7 @@ export default function WhyChooseUs() {
               </span>
               <h3 className="text-[20px] font-semibold text-white -mt-2">{pillar.title}</h3>
               <p className="text-[#9ca3af] leading-relaxed">{pillar.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

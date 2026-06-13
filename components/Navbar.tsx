@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X, Leaf } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -80,37 +79,29 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden bg-white border-t border-gray-100 shadow-lg"
-          >
-            <nav className="flex flex-col px-6 py-4 gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="py-3 text-base font-medium text-[#1a1a1a] hover:text-[#3a5a40] border-b border-gray-50 transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              ))}
+      {menuOpen && (
+        <div className="md:hidden overflow-hidden bg-white border-t border-gray-100 shadow-lg">
+          <nav className="flex flex-col px-6 py-4 gap-1">
+            {navLinks.map((link) => (
               <a
-                href="#contact"
+                key={link.href}
+                href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="mt-3 inline-flex items-center justify-center px-5 py-3 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors duration-200"
+                className="py-3 text-base font-medium text-[#1a1a1a] hover:text-[#3a5a40] border-b border-gray-50 transition-colors duration-200"
               >
-                Get a Free Quote
+                {link.label}
               </a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-3 inline-flex items-center justify-center px-5 py-3 rounded-full bg-[#3a5a40] text-white text-sm font-semibold hover:bg-[#2d4731] transition-colors duration-200"
+            >
+              Get a Free Quote
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
