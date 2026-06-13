@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Ken Burns zooming background */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.png')" }}
+        style={{ backgroundImage: "url('/hero-bg.svg')" }}
         initial={{ scale: 1 }}
         animate={{ scale: 1.1 }}
         transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}

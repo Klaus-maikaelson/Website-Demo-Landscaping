@@ -6,55 +6,55 @@ import { ArrowRight } from 'lucide-react'
 const services = [
   {
     name: 'Plant Installation',
-    image: '/services/plant-installation.png',
+    image: '/services/plant-installation.svg',
     description:
       'Custom plant design and installation following best practices. Your landscaping will thrive for years to come.',
   },
   {
     name: 'Mulching',
-    image: '/services/mulching.png',
+    image: '/services/mulching.svg',
     description:
       "Suppress weeds and define garden beds with fresh mulch. Significantly enhances your yard's appearance.",
   },
   {
     name: 'Yard Cleanup',
-    image: '/services/yard-cleanup.png',
+    image: '/services/yard-cleanup.svg',
     description:
       'Debris removal, trimming, and edge defining to sharpen your outdoor spaces.',
   },
   {
     name: 'Hardscaping',
-    image: '/services/hardscaping.png',
+    image: '/services/hardscaping.svg',
     description:
       'Retaining walls, patios, and steps installed by experts. Complete your outdoor space.',
   },
   {
     name: 'Drainage',
-    image: '/services/drainage.png',
+    image: '/services/drainage.svg',
     description:
       'Grading and drain installation to prevent water pooling on your property.',
   },
   {
     name: 'Leaf Removal',
-    image: '/services/leaf-removal.png',
+    image: '/services/leaf-removal.svg',
     description:
       'Professional fall cleanup to protect your grass and boost curb appeal.',
   },
   {
     name: 'Power Washing',
-    image: '/services/power-washing.png',
+    image: '/services/power-washing.svg',
     description:
       'Soft washing and surface cleaning to remove algae, mildew, and grime.',
   },
   {
     name: 'Permanent LED Installs',
-    image: '/services/led-installs.png',
+    image: '/services/led-installs.svg',
     description:
       'Permanent holiday lighting designed and installed for stress-free seasons year after year.',
   },
   {
     name: 'Snow Removal',
-    image: '/services/snow-removal.png',
+    image: '/services/snow-removal.svg',
     description:
       'Driveways and walkways cleared to keep your property safe all winter.',
   },
